@@ -32,6 +32,13 @@ int i, j; //iterators
 uint32_t c = 0, prod_c = 0; //carry values
 uint64_t s = 0, temp = 0;
 
+if(sz_a < sz_b + 1)
+{
+  printf("ERROR: in function call partialprod32(), sz_a must be at least one greater than sz_b.\n\n\n");
+  printf("\tuint32_t partialprod32(uint32_t as[], int sz_a, uint32_t bs[], int sz_b, uint32_t d)\n");
+  exit(0);
+}
+
 uint32_t prod_bd32[sz_b+1];//array holds value bs*d
 memset(prod_bd32, 0, (sz_b+1)*4);//initializes array to zeroes. There are 4 bytes in a uint32_t so it sets to 0 for (sz_b+1)*4 bytes
 
@@ -165,5 +172,3 @@ int main(int argc, char const *argv[])
 
 
 }
-
-  
